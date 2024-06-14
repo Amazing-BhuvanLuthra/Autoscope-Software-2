@@ -1,0 +1,79 @@
+#header,footer{
+    background-color: #4CAF50;
+    text-align: center;
+    padding: 20px;
+    text-decoration-color: aliceblue;
+}
+main {
+    flex: 1;
+    padding: 20px;
+}
+#body{
+    background-color: #333;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+#h1{
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.file-label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: white;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.file-label i {
+    margin-right: 5px;
+}
+
+.file-label2 {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.file-label2 i {
+    margin-right: 5px;
+}
+
+
+.go-back-button {
+    position: absolute;
+    left: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .go-back-button i {
+    margin-right: 8px;
+  }
+
