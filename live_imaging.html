@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask Raspberry Pi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <div id="header">
+        <div class="button-container">
+            <!-- <button class="header-btn">Header Button 1</button> -->
+            <button class="camera-button"><i class="fas fa-camera"></i>
+            </button>
+            <!-- <button class="header-btn">Header Button 2</button> -->
+            <!-- <button class="header-btn">Header Button 3</button> -->
+            <!-- Video Start -->
+            <button class="video-start-button">
+            <i class="fas fa-video"></i>
+        </button>
+        <button class="video-stop-button">
+            <i class="fas fa-video-slash"></i>
+        </button>
+            <!-- <button class="header-btn">Header Button 4</button> -->
+            <!-- <button class="header-btn">Header Button 5</button> -->
+            <!-- <button class="header-btn">Header Button 6</button> -->
+            <button onclick="location.href='gallery.html'" class="gallery-button">
+            <i class="fas fa-images"></i>
+        </button>
+        <button class="menu-button">
+            <i class="fas fa-home"></i>
+        </button>
+        <button onclick="location.href='ble.html'" class="bluetooth-button">
+            <i class="fas fa-bluetooth"></i>
+        <button onclick="location.href='wifi.html'" class="wifi-button">
+            <i class="fas fa-wifi"></i>
+        </button>
+            <!-- <button class="header-btn">Header Button 7</button> -->
+            <button class="motor-reset-button">
+            <i class="fas fa-undo-alt"></i>
+        </button>
+        <button onclick="location.href='image_stitching.html'" class="header-button"><i class="fas fa-images"></i></button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <div id="content">
+        <button id="toggleButton" class="menu-button"><i class="fas fa-bars"></i></button>
+    </div>
+    <div id="footer">
+        <div class="container">
+            <div class="button-group">
+                <div class="empty"></div>
+                <button class="button"><i class="fas fa-arrow-up"></i></button>
+                <div class="empty"></div>
+                <button class="button"><i class="fas fa-arrow-left"></i></button>
+                <div class="empty"></div>
+                <button class="button"><i class="fas fa-arrow-right"></i></button>
+                <div class="empty"></div>
+                <button class="button"><i class="fas fa-arrow-down"></i></button>
+                <div class="empty"></div>
+            </div>
+            <div class="button-group">
+                <div class="empty"></div>
+               <button class="button"><i class="fas fa-arrow-up" ></i></button>
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+                
+                <button class="button"><i class="fas fa-arrow-down" ></i></button>
+                <div class="empty"></div>
+            </div>
+            
+        <!-- </div> -->
+        <div class="coordinate-container">
+            <div class="coordinate">
+                <div class="coordinate-label">X</div>
+                <div class="coordinate-value" id="coord-x">0</div>
+            </div>
+            <div class="coordinate">
+                <div class="coordinate-label">Y</div>
+                <div class="coordinate-value" id="coord-y">0</div>
+            </div>
+            <div class="coordinate">
+                <div class="coordinate-label">Z</div>
+                <div class="coordinate-value" id="coord-z">0</div>
+            </div>
+        </div>
+
+        
+           
+        <!-- <button class="footer-btn">Footer Button 6</button> -->
+        
+
+  <label class="switch">
+	<input type="checkbox">
+	<div class="slider slider--0">ON</div>
+	<div class="slider slider--1">
+		<div></div>
+		<div></div>
+	</div>
+	<div class="slider slider--2"></div>
+	<div class="slider slider--3">OFF</div>
+</label>
+<script>
+    function showButtons() {
+        var buttons = document.getElementById('popupButtons');
+        if (buttons.style.display === 'none' || buttons.style.display === '') {
+            buttons.style.display = 'flex';
+        } else {
+            buttons.style.display = 'none';
+        }
+    }
+</script>
+            <button onclick="showButtons()" class="styled-button"><i class="fas fa-search"></i></button>
+            <div id="popupButtons">
+                <button>4X</button>
+                <button>10X</button>
+                <button>40X</button>
+            </div>
+            <!-- <button class="footer-btn">Footer Button 7</button> -->
+            <div>
+        <span id="rangeValue">0</span>
+        <Input class="range" type="range" name "" value="0" min="0" max="1000" onChange="rangeSlide(this.value)" onmousemove="rangeSlide(this.value)"></Input>
+    </div>
+    <script type="text/javascript">
+        function rangeSlide(value) {
+            document.getElementById('rangeValue').innerHTML = value;
+        }
+    </script>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
