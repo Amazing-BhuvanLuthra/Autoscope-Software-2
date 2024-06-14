@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bluetooth Devices</title>
+    <link rel="stylesheet" type="text/css" href="ble_style4.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-Y8B08BWB+pgfl+XmGBwKFO2GsTc3f4l1r/2wRjo6pGnDvBsd0BbMoq2tuDWFoc0o" crossorigin="anonymous">
+</head>
+<body>
+    <div class="header">
+        <button class="go-back-button" onclick="history.back()">
+            <i class="fas fa-arrow-left"></i> Go Back
+        </button>
+        <h1>Nearby Bluetooth Devices:</h1>
+        <button class="keyboard-btn" id="openKeyboardBtn" onclick="openKeyboard()"><i class="fas fa-keyboard"></i>Open Keyboard</button>
+        <button class="keyboard-btn" id="closeKeyboardBtn" onclick="closeKeyboard()"><i class="fas fa-times"></i>Close Keyboard</button>
+    </div>
+    <ul>
+        {% for device in nearby_devices %}
+            <li>{{ device[1] }} - <a href="/connect/{{ device[0] }}">Connect</a></li>
+        {% endfor %}
+    </ul>
+    <div class="footer">
+        <p>&copy; 2024 Bluetooth Devices App</p>
+    </div>
+
+    <script>
+        function openKeyboard() {
+            fetch('/keyboard')
+                .then(response => console.log(response.text()));
+        }
+
+        function closeKeyboard() {
+            fetch('/keyboard/close')
+                .then(response => console.log(response.text()));
+        }
+    </script>
+</body>
+</html>
