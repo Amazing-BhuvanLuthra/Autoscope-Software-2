@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.header, .footer {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+.container {
+    flex: 1;
+    padding: 20px;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    margin: 10px 0;
+}
+form {
+    display: inline;
+}
+.input-container {
+    position: relative;
+    display: inline-block;
+}
+.input-container input[type="password"], 
+.input-container input[type="text"] {
+    width: 100%;
+    padding: 10px 40px 10px 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.input-container .eye-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    background: url('data:image/svg+xml;base64,PHN2ZyBmaWxsPSJibGFjayIgaGVpZ2h0PSI0OCIgY2xhc3M9IiIgdmllc3Nib3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBkYXRhLW5hbWU9IjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTIxLjI4IDExLjk0QTE1LjI0IDE1LjI0IDAgMCAxIDIyLjUgMTIgMTUuMjUgMTUuMjUgMCAwIDEgMTIuNSAyQTExLjkxIDExLjkxIDAgMCAwIDIgMTJhMTEuOTIgMTEuOTIgMCAwIDAgMS41NCAxLjg3IDE1LjQ2IDE1LjQ2IDAgMCAwIDIuMjggMi4zOCAxMi41NCAxMi41NCAwIDAgMCAxNi40MyAwIDE1LjM1IDE1LjM1IDAgMCAwIDIxLjI4IDExLjk0ek0xMiAyLjdhOS4yMSA5LjIxIDAgMCAxIDguNDQgNC44OEMxOS4yMyA5Ljc4IDE2IDE3LjggMTIgMTcuOCAxMC4xOSAxNy44OCA2Ljc4IDEwLjAxIDMuNTQgNy42N2ExMy4xNiAxMy4xNiAwIDAgMSAxLjExLTEuMzJBMTEuNzkgMTEuNzkgMCAwIDEgMTIgMi43ek0xMiA2YTQuNSA0LjUgMCAxIDAtNC41IDQuNSA0LjU1IDQuNTUgMCAwIDAgNC41LTQuNXpNNi44NyA2Ljg3QTUuMTEgNS4xMSAwIDAgMCA2IDExYTExLjAyIDExLjAyIDAgMCAwIDEyIDIuMWMuNDIuNjUuODguNiAxLjI4LjE3bC4yOS0uMjktLjAyLS4wMlptOS40NiA4LjQ2YTEgMSAwIDAgMCAxLjQxIDBsMi45LTIuOWExIDEgMCAwIDAtMS40MS0xLjQybC0yLjkgMi45YTEgMSAwIDAgMCAwIDEuNDJaTTExLjQ0IDlBMSAxIDAgMCAwIDEwIDhhMSAxIDAgMCAwIDAtMSAxaDEuNjRBMSAxIDAgMCAwIDExLjQ0IDl6Ii8+PC9zdmc+') no-repeat center center;
+    background-size: contain;
+}
+.input-container .eye-icon.slash {
+    background: url('data:image/svg+xml;base64,PHN2ZyBmaWxsPSJibGFjayIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTIxLjI4IDExLjk0QTE1LjI0IDE1LjI0IDAgMCAxIDIyLjUgMTIgMTUuMjUgMTUuMjUgMCAwIDEgMTIuNSAyQTExLjkxIDExLjkxIDAgMCAwIDIgMTJhMTEuOTIgMTEuOTIgMCAwIDAgMS41NCAxLjg3IDE1LjQ2IDE1LjQ2IDAgMCAwIDIuMjggMi4zOCAxMi41NCAxMi41NCAwIDAgMCAxNi40MyAwIDE1LjM1IDE1LjM1IDAgMCAwIDIxLjI4IDExLjk0ek0xMiAyLjdhOS4yMSA5LjIxIDAgMCAxIDguNDQgNC44OEMxOS4yMyA5Ljc4IDE2IDE3LjggMTIgMTcuOCAxMC4xOSAxNy44OCA2Ljc4IDEwLjAxIDMuNTQgNy42N2ExMy4xNiAxMy4xNiAwIDAgMSAxLjExLTEuMzJBMTEuNzkgMTEuNzkgMCAwIDEgMTIgMi43ek0xMiA2YTQuNSA0LjUgMCAxIDAtNC41IDQuNSA0LjU1IDQuNTUgMCAwIDAgNC41LTQuNXpNNi44NyA2Ljg3QTUuMTEgNS4xMSAwIDAgMCA2IDExYTExLjAyIDExLjAyIDAgMCAwIDEyIDIuMWMuNDIuNjUuODguNiAxLjI4LjE3bC4yOS0uMjktLjAyLS4wMkwxOS44IDUuNzVhMSAxIDAgMSAwLTEuNDEtMS40Mkw1LjQyIDE4LjhBMSAxIDAgMCAwIDYuODcgMjBMMTEuMyAxNC42NWExIDEgMCAwIDEgMCAxLjQxTDE1Ljg3IDIwaDEuMzNhMSAxIDAgMSAwIDAtMkgxNS41NmwzLjI1LTMuMjUgMS40MSAxLjQxYTEgMSAwIDEgMCAxLjQxLTEuNDFMMTQuNiAxMy4zYTEgMSAwIDAgMC0xLjQxIDBsLTEuOTUtMS45NWwtNi01LjhMMTguMSAzLjEzYTEgMSAwIDAgMC0xLjQxIDEuNDFMNS4xMyAxNi4zM2ExIDEgMCAxIDAgMS40MSAxLjQxbDEuOTQtMS45NHpNMy4yIDE2LjA1bDEuOTQtMS45NEwxMSAzLjU3YTEgMSAwIDAgMC0xLjQxIDEuNDFMMi4yMyAxNS4xN2ExIDEgMCAwIDAgMCAxLjQxem0xLjQyIDMuMTNhMSAxIDAgMSAwMS40MS0xLjQxbDcuMTctNy4xNyAxLjA3IDEuMDctMSAxLjA3bC04LjE3IDguMTdBMSAxIDAgMCAwIDQuNiAxOS4zYTEgMSAwIDAgMC0uNzktMS40M3oiLz48L3N2Zz4=') no-repeat center center;
+    background-size: contain;
+}
+input[type="submit"] {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.go-back-button {
+    position: absolute;
+    left: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .go-back-button i {
+    margin-right: 8px;
+  }
+
+  .keyboard-btn {
+    font-size: 24px;
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
+}
+.keyboard-btn:hover {
+    background-color: #0056b3;
+}
