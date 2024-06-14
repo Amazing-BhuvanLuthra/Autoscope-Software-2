@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wi-Fi Manager</title>
+<link href="wifi_style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="header">
+        <button class="go-back-button" onclick="history.back()">
+            <i class="fas fa-arrow-left"></i> Go Back
+        </button>
+        <h1>Wi-Fi Manager</h1>
+        <button class="keyboard-btn" id="openKeyboardBtn" onclick="openKeyboard()"><i class="fas fa-keyboard"></i>Open Keyboard</button>
+        <button class="keyboard-btn" id="closeKeyboardBtn" onclick="closeKeyboard()"><i class="fas fa-times"></i>Close Keyboard</button>
+        
+    </div>
+    <script>
+        function openKeyboard() {
+            fetch('/keyboard')
+                .then(response => console.log(response.text()));
+        }
+
+        function closeKeyboard() {
+            fetch('/keyboard/close')
+                .then(response => console.log(response.text()));
+        }
+    </script>
+    <div class="container">
+        <h2>Available Wi-Fi Networks</h2>
+        <ul>
+            {% for network in networks %}
+            <li>
+                <form action="/connect" method="post">
+                    {{ network }}
+                    <input type="hidden" name="ssid" value="{{ network }}">
+                    <div class="input-container">
+                        <input type="password" name="password" placeholder="Password" id="password{{ loop.index }}">
+                        <span class="eye-icon" onclick="togglePassword('password{{ loop.index }}')"></span>
+                    </div>
+                    <input type="submit" value="Connect">
+                </form>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 Raspberry Pi Wi-Fi Manager</p>
+    </div>
+    <script>
+        function togglePassword(id) {
+            const passwordField = document.getElementById(id);
+            const icon = passwordField.nextElementSibling;
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                icon.classList.add('slash');
+            } else {
+                passwordField.type = 'password';
+                icon.classList.remove('slash');
+            }
+        }
+    </script>
+    
+</body>
+</html>
+
